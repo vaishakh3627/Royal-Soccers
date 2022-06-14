@@ -1,0 +1,77 @@
+.admin-page-container-wrapper {
+  margin-top: 5rem;
+  .admin-page-row-elements {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .admin-page-column-elements {
+      .admin-page-image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .admin-football {
+          margin-top: 10px;
+          width: 8rem;
+          animation: spin 6s linear infinite;
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .admin-football:hover {
+          animation: none;
+          cursor: pointer;
+        }
+        .admin-cart {
+          margin-top: 10px;
+          width: 10rem;
+          animation: move 6s linear infinite;
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .admin-cart:hover {
+          animation: none;
+          cursor: pointer;
+        }
+        .admin-coffee {
+          width: 8rem;
+          animation: move 6s linear infinite;
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .admin-coffee:hover {
+          animation: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes move {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .admin-page-container-wrapper {
+    height: 80% !important;
+    margin-top: 3rem;
+    .admin-page-row-elements {
+      .admin-page-column-elements {
+        height: 12rem;
+        .admin-page-image-wrapper {
+          height: 9rem;
+          .admin-football {
+            width: 8rem;
+          }
+          .admin-cart {
+            width: 9rem;
+          }
+          .admin-coffee {
+            width: 8rem;
+          }
+        }
+      }
+    }
+  }
+}

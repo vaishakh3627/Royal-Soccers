@@ -1,0 +1,77 @@
+.user-page-container-wrapper {
+  margin-top: 5rem;
+  .user-page-row-elements {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    .user-page-column-elements {
+      .user-page-image-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .user-football {
+          margin-top: 10px;
+          width: 8rem;
+          animation: spin 6s linear infinite;
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .user-football:hover {
+          animation: none;
+          cursor: pointer;
+        }
+        .user-cart {
+          margin-top: 10px;
+          width: 10rem;
+          animation: move 6s linear infinite;
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .user-cart:hover {
+          animation: none;
+          cursor: pointer;
+        }
+        .user-coffee {
+          width: 8rem;
+          animation: move 6s linear infinite;
+          animation-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        .user-coffee:hover {
+          animation: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes move {
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .user-page-container-wrapper {
+    height: 80% !important;
+    margin-top: 3rem;
+    .user-page-row-elements {
+      .user-page-column-elements {
+        height: 12rem;
+        .user-page-image-wrapper {
+          height: 9rem;
+          .user-football {
+            width: 8rem;
+          }
+          .user-cart {
+            width: 9rem;
+          }
+          .user-coffee {
+            width: 8rem;
+          }
+        }
+      }
+    }
+  }
+}

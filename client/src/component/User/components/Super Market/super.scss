@@ -1,0 +1,82 @@
+.super-market-page-container-wrapper {
+  height: calc(100% - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .super-market-row {
+    width: 60%;
+    height: 60%;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px 2px;
+    background-color: rgba(12, 12, 12, 0.3);
+    input:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+    h4 {
+      color: white;
+      margin: 0px !important;
+    }
+    .super-market-page-input-label {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .super-market-page-submit-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .submit-button {
+        width: 20%;
+      }
+      button:focus {
+        outline: none !important;
+        box-shadow: none !important;
+      }
+    }
+    .super-display-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .display {
+        height: 4rem;
+        width: 50%;
+        background-color: white;
+        border-radius: 10px;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h5 {
+          margin: 0px !important;
+          color: red;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .super-market-page-container-wrapper {
+    .super-market-row {
+      width: 100% !important;
+      h4 {
+        font-size: medium;
+      }
+      .super-market-page-input-label {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .super-market-page-submit-button {
+        .submit-button {
+          width: 30% !important;
+          margin-top: 10px !important;
+        }
+      }
+      .super-display-wrapper {
+        .display {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
