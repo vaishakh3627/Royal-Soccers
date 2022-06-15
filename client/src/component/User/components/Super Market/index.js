@@ -41,6 +41,7 @@ const SuperMarketPage = () => {
       <Sale
         data={data}
         updateData={updateData}
+        setData={setData}
         tally={tally}
         setTally={setTally}
       />

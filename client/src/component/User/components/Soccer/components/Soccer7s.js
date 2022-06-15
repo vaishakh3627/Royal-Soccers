@@ -2,12 +2,34 @@ import React from "react";
 
 import { Button, Col, Form, FormControl, Row } from "react-bootstrap";
 
-const Soccer7s = ({ updateData, data, setCash, cash }) => {
-  const handleButton = () => {
+import { createData } from "../api";
+
+const Soccer7s = ({ updateData, data, setCash, cash, setData }) => {
+  const handleButton = async () => {
+    await createData({
+      date: data.date,
+      numberof5s: data.total5s,
+      discountof5s: data.discount5s,
+      priceof5s: data.amount5s,
+      numberof7s: data.total7s,
+      discountof7s: data.discount7s,
+      priceof7s: data.amount7s,
+      expence: data.expence,
+    });
     let total5sAmount = data.total5s * data.amount5s - data.discount5s;
     let total7sAmount = data.total7s * data.amount7s - data.discount7s;
     let totalAmount = total5sAmount + total7sAmount - data.expence;
     setCash(totalAmount);
+    setData({
+      date: "",
+      total5s: "",
+      discount5s: "",
+      amount5s: "",
+      total7s: "",
+      discount7s: "",
+      amount7s: "",
+      expence: "",
+    });
   };
 
   return (

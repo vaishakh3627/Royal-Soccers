@@ -9,6 +9,8 @@ import {
   Row,
 } from "react-bootstrap";
 
+import { createData } from "./api";
+
 import "./coffee.scss";
 
 const CoffeeShopPage = () => {
@@ -27,9 +29,15 @@ const CoffeeShopPage = () => {
     }));
   };
 
-  const handleButton = () => {
+  const handleButton = async () => {
+    await createData({
+      date: data.date,
+      sale: data.sale,
+      expence: data.expence,
+    });
     let totalCollection = data.sale - data.expence;
     setTotal(totalCollection);
+    setData({ date: "", sale: "", expence: "" });
   };
 
   return (

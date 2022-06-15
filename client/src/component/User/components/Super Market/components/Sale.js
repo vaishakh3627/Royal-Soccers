@@ -2,12 +2,22 @@ import React from "react";
 
 import { Button, Col, Form, FormControl, Row } from "react-bootstrap";
 
-const Sale = ({ data, updateData, tally, setTally }) => {
-  const handleButton = () => {
+import { createData } from "../api";
+
+const Sale = ({ data, updateData, tally, setTally, setData }) => {
+  const handleButton = async () => {
+    await createData({
+      date: data.date,
+      cashinhand: data.cash,
+      expence: data.expence,
+      saleinsw: data.sale,
+      deposit: data.deposit,
+    });
     let totalCash = 1 * data.cash + 1 * data.sale;
     let totalExpence = 1 * data.expence + 1 * data.deposit;
     let cahsInHand = totalCash - totalExpence;
     setTally(cahsInHand);
+    setData({ date: "", cash: "", expence: "", sale: "", deposit: "" });
   };
 
   return (

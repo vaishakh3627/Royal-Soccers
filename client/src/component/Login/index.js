@@ -17,6 +17,8 @@ import "./login.scss";
 
 import { login } from "../../redux/features/UserSlice";
 
+import { createData } from "./api";
+
 const LogInForm = () => {
   const [data, setData] = useState({
     username: "",
@@ -34,7 +36,8 @@ const LogInForm = () => {
 
   let navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    await createData({ username: data.username, password: data.password });
     setData({ username: "", password: "" });
     dispatch(
       login({

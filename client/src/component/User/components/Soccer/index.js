@@ -43,6 +43,7 @@ const SoccerPage = () => {
     [SOCCER_7s]: (
       <Soccer7s
         updateData={updateData}
+        setData={setData}
         data={data}
         cash={cash}
         setCash={setCash}
